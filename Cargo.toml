@@ -10,6 +10,11 @@ license = "Apache-2.0"
 readme = "README.md"
 edition = "2021"
 
+[workspace]
+members = [
+    "df-proxy",
+]
+
 [[bin]]
 name = "dfdaemon"
 path = "src/bin/dfdaemon/main.rs"
@@ -64,3 +69,13 @@ url = "2.4.0"
 async-stream = "0.3.5"
 anyhow = "1.0.75"
 base16ct = { version = "0.2", features = ["alloc"] }
+tower.workspace = true
+
+[workspace.dependencies]
+tokio = { version = "1.29.1", features = ["full"] }
+hyper = "0.14.27"
+axum = { version = "0.6.20" }
+hyper-rustls = "0.24.1"
+rustls = "0.21.7"
+rustls-pemfile = "1.0.3"
+tower = "0.4.13"

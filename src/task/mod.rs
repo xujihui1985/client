@@ -77,7 +77,7 @@ impl Task {
 
         // Construct the interested pieces request.
         let in_stream = tokio_stream::once(SyncPiecesRequest {
-            task_id: task_id.to_string(),
+            // task_id: task_id.to_string(),
             request: Some(sync_pieces_request::Request::InterestedPiecesRequest(
                 InterestedPiecesRequest {
                     piece_numbers: vec![number],
